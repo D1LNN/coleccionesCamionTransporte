@@ -1,0 +1,30 @@
+import camion.*
+import cosas.*
+
+describe "Test de camion" {
+
+	test "Test de bumblebee" {
+		bumblebee.transformar()
+		camion.cargar(bumblebee)
+		assert.equals(1800, camion.pesoTotal())
+	}
+
+	test "Test de arena a granel" {
+		arena.pesa(150)
+		camion.cargar(arena)
+		assert.equals(1150, camion.pesoTotal())
+	}
+
+	test "Test de batería antiaérea" {
+		camion.cargar(bateria)
+		assert.equals(1300, camion.pesoTotal())
+	}
+
+	test "Test de el embalaje de seguridad con 80 ladrillos" {
+		paqueteDeLadrillos.cantidadLadrillos(80)
+		camion.cargar(paqueteDeLadrillos)
+		assert.equals(1160, camion.pesoTotal())
+	}
+
+}
+

@@ -1,0 +1,67 @@
+import camion2.*
+import cosas2.*
+
+describe "Test de bultos" {
+
+	var cantLadrillos = 0
+
+	test "Test de KnightRider" {
+		camion.cargar(knightRider)
+		assert.equals(1, camion.totalBultos())
+	}
+
+	test "Test de Bumblebee" {
+		camion.cargar(bumblebee)
+		assert.equals(2, camion.totalBultos())
+	}
+
+	test "Test de paquete de ladrillos de 55" {
+		cantLadrillos = 55
+		paqueteDeLadrillos.cantidadLadrillos(cantLadrillos)
+		camion.cargar(paqueteDeLadrillos)
+		assert.equals(1, camion.totalBultos())
+	}
+
+	test "Test de paquete de ladrillos de 200" {
+		cantLadrillos = 200
+		paqueteDeLadrillos.cantidadLadrillos(cantLadrillos)
+		camion.cargar(paqueteDeLadrillos)
+		assert.equals(2, camion.totalBultos())
+	}
+
+	test "Test de paquete de ladrillos de 301" {
+		cantLadrillos = 301
+		paqueteDeLadrillos.cantidadLadrillos(cantLadrillos)
+		camion.cargar(paqueteDeLadrillos)
+		assert.equals(3, camion.totalBultos())
+	}
+
+	test "Test de arena a granel" {
+		camion.cargar(arena)
+		assert.equals(1, camion.totalBultos())
+	}
+
+	test "Test de batería antiaérea" {
+		camion.cargar(bateria)
+		assert.equals(2, camion.totalBultos())
+	}
+
+	test "Test de contenedor portuario" {
+		contenedor.agregar(bumblebee)
+		contenedor.agregar(arena)
+		camion.cargar(contenedor)
+		assert.equals(4, camion.totalBultos())
+	}
+
+	test "Test de residuos radioactivos" {
+		camion.cargar(residuos)
+		assert.equals(1, camion.totalBultos())
+	}
+
+	test "Test de embalaje de seguridad" {
+		camion.cargar(embalaje)
+		assert.equals(2, camion.totalBultos())
+	}
+
+}
+

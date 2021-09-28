@@ -1,0 +1,30 @@
+import cosas.*
+
+describe "Test de cosas" {
+
+	test "Test de paquete de ladrillos" {
+		paqueteDeLadrillos.cantidadLadrillos(100)
+		assert.equals(200, paqueteDeLadrillos.peso())
+	}
+
+	test "Test de batería antiaérea" {
+		assert.equals(300, bateria.peso())
+		assert.equals(100, bateria.nivelPeligrosidad())
+	}
+
+	test "Test de contenedor portuario" {
+		arena.pesa(30)
+		contenedor.agregar(bateria)
+		contenedor.agregar(knightRider)
+		contenedor.agregar(arena)
+		assert.equals(930, contenedor.peso())
+	}
+
+	test "Test de embalaje de seguridad" {
+		residuos.pesa(30)
+		embalaje.envuelve(residuos)
+		assert.equals(30, embalaje.peso())
+	}
+
+}
+
